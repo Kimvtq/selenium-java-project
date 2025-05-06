@@ -4,9 +4,9 @@
     <parameter name="username" value="kvtp" />
     <parameter name="password" value="kvtp" />
 
-    <test name="Create Challenge Test">
+    <test name="My Challenge Test">
         <classes>
-            <class name="tests.CreateChallengeTest"/>
+            <class name="tests.MyChallengesTest"/>
         </classes>
     </test>
 </suite>

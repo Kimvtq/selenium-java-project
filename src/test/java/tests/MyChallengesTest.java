@@ -1,7 +1,5 @@
 package tests;
 import java.util.UUID;
-import org.testng.ITestContext;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.CreateChallengePage;
@@ -28,10 +26,10 @@ public class MyChallengesTest extends BaseTest {
 
         loginPage.visitLoginPage(baseUrl);
         loginPage.login(username, password);
-//        loggedInBasePage.navigateToCreateChallengePage();
-//        createChallengePage.createChallenge(challengeTitle, challengeFlag, challengeDescription, challengeHowToSolve);
-//        loggedInBasePage.navigateToMyChallengePage();
-//        myChallengesPage.verifyFirstChallenge(challengeTitle, challengeStatus);
+        loggedInBasePage.navigateToCreateChallengePage();
+        createChallengePage.createChallenge(challengeTitle, challengeFlag, challengeDescription, challengeHowToSolve);
+        loggedInBasePage.navigateToMyChallengePage();
+        myChallengesPage.verifyFirstChallenge(challengeTitle, challengeStatus);
         loggedInBasePage.logout();
     }
 }

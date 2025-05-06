@@ -1,6 +1,5 @@
 package tests;
 
-import org.testng.ITestContext;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -14,7 +13,7 @@ import java.util.UUID;
 public class CreateChallengeTest extends BaseTest {
     @Parameters({"username", "password"})
     @Test
-    public void testCreateChallenge(String username, String password) {
+    public void testCreateChallenge(@Optional String username, @Optional String password) {
         LoginPage loginPage = new LoginPage(driver, wait);
         LoggedInBasePage loggedInBasePage = new LoggedInBasePage(driver, wait);
         CreateChallengePage createChallengePage = new CreateChallengePage(driver, wait);
@@ -25,9 +24,9 @@ public class CreateChallengeTest extends BaseTest {
         String challengeHowToSolve = "This is an automated test challenge.";
 
         loginPage.visitLoginPage(baseUrl);
-//        loginPage.login(username, password);
-//        loggedInBasePage.navigateToCreateChallengePage();
-//        createChallengePage.createChallenge(challengeTitle, challengeFlag, challengeDescription, challengeHowToSolve);
-//        loggedInBasePage.logout();
+        loginPage.login(username, password);
+        loggedInBasePage.navigateToCreateChallengePage();
+        createChallengePage.createChallenge(challengeTitle, challengeFlag, challengeDescription, challengeHowToSolve);
+        loggedInBasePage.logout();
     }
 }

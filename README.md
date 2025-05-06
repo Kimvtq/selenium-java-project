@@ -1,82 +1,82 @@
-# Selenium Java Automation Framework with Jenkins CI/CD
 
-This repository contains an automated testing framework using **Java + Selenium + TestNG**.  
-It is integrated with **Jenkins CI/CD** for automated execution after pull request merges to `main`.
+# CBTW Selenium Java
 
-## 🚀 Features
+A **Java Selenium** test automation framework using **TestNG** and **Maven**, designed for web application testing across different environments (Dev, QA, Staging).
 
-- Browser-based testing using **Selenium WebDriver**
-- Test orchestration using **TestNG**
-- Maven-based build & dependency management
-- CI/CD pipeline triggered by **PR merges into main branch**
-- HTML test reports published in Jenkins
-- Supports test suite selection (Dev, QA, Staging)
+---
 
-## 🗂️ Project Structure
+## Features
 
-```
-src/test/java         # Test scripts
-src/main/java         # Page objects & utilities
-testng-dev.xml        # Dev test suite
-testng-qa.xml         # QA test suite
-testng-staging.xml    # Staging test suite
-Jenkinsfile           # Jenkins CI pipeline definition
-pom.xml               # Maven config
-```
+- ✅ Selenium WebDriver for browser automation
+- ✅ TestNG for organizing and executing tests
+- ✅ Maven for dependency management and build
+- ✅ Environment-specific TestNG suites (`dev`, `qa`, `staging`)
 
-## 🛠️ Prerequisites
 
-- Java 8+
-- Maven 3.6+
-- Jenkins with these plugins installed:
-  - **GitHub Branch Source**
-  - **Pipeline**
-  - **HTML Publisher**
+---
 
-## 🚦 Running Tests Locally
+## Project Structure
 
 ```
-# Clean and run tests with Dev suite
-mvn clean test -DsuiteXmlFile=testng-dev.xml
-```
-
-## 🔄 CI/CD Pipeline
-
-The provided `Jenkinsfile` does the following:
-
-- **Triggers** only when a PR is merged into `main`
-- Checks out code
-- Builds project with Maven
-- Runs selected TestNG suite
-- Publishes **HTML test reports** and **JUnit results** in Jenkins
-- Archives test artifacts
-
-### 🔧 Test Suite Selection in Jenkins
-
-When starting a pipeline run, choose from:
-
-- `testng-dev.xml`
-- `testng-qa.xml`
-- `testng-staging.xml`
-
-## 📊 Test Reports
-
-- JUnit XML reports are archived in Jenkins.
-- An HTML report (`emailable-report.html`) is available as a **clickable report** in Jenkins build results.
-
-## 👇 Example Jenkinsfile Trigger Condition
-
-The pipeline runs **only** on merge to `main` branch:
-
-```groovy
-when {
-    allOf {
-        expression { env.CHANGE_ID == null } // Not a PR
-        branch 'main' // Only main branch
-    }
-}
+cbtw-selenium-java/
+├── pom.xml               # Maven config file
+├── testng-dev.xml        # Test suite for Dev environment
+├── testng-qa.xml         # Test suite for QA environment
+├── testng-staging.xml    # Test suite for Staging environment
+├── src/test/java/        # Test cases and test logic
+└── .idea/                # IDE config (optional)
 ```
 
 ---
 
-## 💪 Happy Testing!
+## Prerequisites
+
+- Java JDK 8 or higher
+- Maven 3.6+
+- ChromeDriver (depending on browser target)
+
+---
+
+## Setup & Install
+
+1. **Clone the repo**
+
+```bash
+git clone https://github.com/Kimvtq/selenium-java-project.git
+```
+
+2. **Install dependencies**
+
+```bash
+mvn clean install
+```
+
+---
+
+## Running Tests
+
+### Run Dev Suite
+```bash
+mvn clean test -Pdev
+```
+
+### Run QA Suite
+```bash
+mvn clean test -Pqa
+```
+
+### Run Staging Suite
+```bash
+mvn clean test -Pstaging
+```
+
+---
+
+
+## Customize
+
+- Modify the `testng-*.xml` files to add/remove test classes.
+- Update `pom.xml` to manage dependencies.
+
+---
+

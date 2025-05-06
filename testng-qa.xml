@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="CTFLearn QA Suite">
-    <parameter name="envURL" value="https://qa.ctflearn.com" />
-    <parameter name="username" value="qa_user" />
-    <parameter name="password" value="qa_pass" />
+    <parameter name="envURL" value="https://ctflearn.com" />
+    <parameter name="username" value="kvtp" />
+    <parameter name="password" value="kvtp" />
 
-    <test name="Create Challenge Test - QA">
+    <test name="My Challenge Test - QA">
         <classes>
-            <class name="tests.CreateChallengeTest"/>
+            <class name="tests.MyChallengesTest"/>
         </classes>
     </test>
 </suite>
