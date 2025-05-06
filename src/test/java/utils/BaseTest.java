@@ -17,7 +17,7 @@ public class BaseTest {
 
     @Parameters({"envURL"})
     @BeforeClass
-    public void setUp(String envURL) {
+    public void setUp(@Optional String envURL) {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
