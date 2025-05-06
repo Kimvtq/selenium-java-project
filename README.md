@@ -1,5 +1,5 @@
 
-# CBTW Selenium Java
+# Selenium Java
 
 A **Java Selenium** test automation framework using **TestNG** and **Maven**, designed for web application testing across different environments (Dev, QA, Staging).
 
@@ -18,7 +18,7 @@ A **Java Selenium** test automation framework using **TestNG** and **Maven**, de
 ## Project Structure
 
 ```
-cbtw-selenium-java/
+selenium-java-project/
 ├── pom.xml               # Maven config file
 ├── testng-dev.xml        # Test suite for Dev environment
 ├── testng-qa.xml         # Test suite for QA environment
